@@ -3,8 +3,8 @@ body, html {
     padding: 0;
     height: 100%;
     font-family: 'Montserrat', sans-serif;
-    color: #E0E0E0; /* Light text color for dark theme */
-    background-color: #121212; /* Dark background color */
+    color: #E0E0E0;
+    background-color: #121212;
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -15,13 +15,13 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Faded effect */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
 
 .hero {
     position: relative;
-    background-image: url('college.png'); /* Replace with your image path */
+    background-image: url('college.png');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -31,7 +31,7 @@ body, html {
     justify-content: center;
     text-align: center;
     z-index: 0;
-    padding: 0 20px; /* Add padding to avoid content being too close to edges */
+    padding: 0 20px;
 }
 
 .hero-content {
@@ -41,10 +41,10 @@ body, html {
 .hero h1 {
     font-size: 4rem;
     margin: 0;
-    color: #FFD700; /* Golden color for a highlight */
+    color: #FFD700;
     opacity: 0;
     transform: translateY(-20px);
-    animation: fadeInUp 1s forwards 0.5s; /* Fade in and move up animation */
+    animation: fadeInUp 1s forwards 0.5s;
 }
 
 .hero p {
@@ -52,42 +52,43 @@ body, html {
     margin: 10px 0 20px;
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeInUp 1s forwards 1s; /* Fade in and move up animation */
+    animation: fadeInUp 1s forwards 1s;
 }
 
 .btn {
     padding: 10px 20px;
-    border: 2px solid #FFD700; /* Golden border */
+    border: 2px solid #FFD700;
     text-transform: uppercase;
     text-decoration: none;
-    color: #FFD700; /* Golden text color */
+    color: #FFD700;
     background: transparent;
     transition: background 0.3s, color 0.3s;
+    border-radius: 10px; /* Rounded edges */
 }
 
 .btn:hover {
-    background: #FFD700; /* Golden background on hover */
-    color: #121212; /* Dark text color on hover */
+    background: #FFD700;
+    color: #121212;
 }
 
 .nav {
     position: fixed;
     width: 100%;
-    height: 60px; /* Fixed height for nav */
-    padding: 0 20px; /* Padding to ensure text is not too close to edges */
+    height: 60px;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0D0D0D; /* Darker black for nav */
-    color: #E0E0E0; /* Light text color */
+    background: #0D0D0D;
+    color: #E0E0E0;
     z-index: 3;
     box-sizing: border-box;
     top: 0;
-    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
+    transition: transform 0.3s ease;
 }
 
 .nav.hidden {
-    transform: translateY(-100%); /* Move up out of view */
+    transform: translateY(-100%);
 }
 
 .nav .menu {
@@ -95,71 +96,70 @@ body, html {
     gap: 20px;
 }
 
-.nav .menu-left, .nav .menu-right {
-    margin-left: 0; /* Add a small margin from the left edge */
-    margin-right: 0; /* Add a small margin from the right edge */
-}
-
 .menu a {
-    color: #E0E0E0; /* Light text color */
+    color: #E0E0E0;
     text-decoration: none;
     font-weight: bold;
 }
 
 .nav a:hover {
-    color: #FFD700; /* Golden color on hover */
+    color: #FFD700;
+}
+
+.logo-img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    vertical-align: middle;
+    margin-right: 10px; /* Space between logo and text */
 }
 
 .info-section {
-    height: 100vh; /* Set the height to the same as the background image */
+    height: 100vh;
     display: flex;
-    flex-direction: column; /* Stack the info blocks vertically */
-    background: #1E1E1E; /* Slightly lighter dark background */
+    flex-direction: column;
+    background: #1E1E1E;
 }
 
 .info-block {
     display: flex;
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    padding: 40px; /* Add padding for spacing */
-    color: #E0E0E0; /* Light text color */
-    background: #1E1E1E; /* Same background color for both blocks */
-    gap: 40px; /* Space between title and content */
-    height: 50vh; /* Set the height to 50% of the viewport height */
-    opacity: 0; /* Initially invisible */
-    transform: translateY(20px); /* Start slightly down */
-    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for fade-in and move-up */
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    color: #E0E0E0;
+    background: #1E1E1E;
+    gap: 40px;
+    height: 50vh;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.info-block:nth-child(even) {
-    background: #1E1E1E; /* Same background color for alternating blocks */
-}
-
-.info-title {
-    flex: 1; /* Take up available space */
+.info-image {
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content vertically and horizontally */
+    justify-content: center;
+
+}
+
+.info-image img {
+    width: 100%;
+    max-width: 500px;
+    max-height: 300px;
+    border-radius: 10px; /* Rounded edges for images */
 }
 
 .info-content {
-    flex: 1; /* Take up available space */
+    flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content vertically and horizontally */
-}
-
-.info-title h2 {
-    font-size: 4rem; /* Adjust the title font size */
-    color: #FFD700; /* Golden color for the title */
-    text-align: center; /* Center text horizontally */
-    line-height: 1.2; /* Adjust line height for multi-line title */
+    justify-content: center;
 }
 
 .info-content p {
-    font-size: 1.5rem; /* Increase content font size */
-    text-align: center; /* Center text horizontally */
-    margin: 0; /* Remove default margin */
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 0;
 }
 
 .footer {
@@ -204,26 +204,17 @@ body, html {
 .footer-btn {
     padding: 10px 20px;
     border: 2px solid #FFD700;
+    text-transform: uppercase;
     text-decoration: none;
     color: #FFD700;
     background: transparent;
     transition: background 0.3s, color 0.3s;
+    border-radius: 10px; /* Rounded edges */
 }
 
 .footer-btn:hover {
     background: #FFD700;
     color: #121212;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-    margin: 0 10px;
-    transition: transform 0.3s;
-}
-
-.social-icons img:hover {
-    transform: scale(1.1);
 }
 
 .association img {
@@ -242,34 +233,35 @@ body, html {
     text-decoration: none;
 }
 
-/* About Us Page Styles */
 .about-hero {
     background-color: #121212;
     color: #FFD700;
-    padding: 100px 20px;
+    padding: 50px 20px;
     text-align: center;
 }
 
 .about-hero h1 {
+    padding-top: 30px;
     font-size: 4rem;
     margin: 0;
 }
 
 .team-section {
     display: flex;
-    justify-content: center; /* Center the team members */
+    justify-content: center;
     flex-wrap: wrap;
     padding: 40px 20px;
     background-color: #1E1E1E;
-    gap: 80px; /* Adds moderate space between items */
+    gap: 80px;
 }
 
 .team-member {
     margin: 10px;
     text-align: center;
     color: #E0E0E0;
-    max-width: 300px; /* Ensure a max-width */
-    flex: 1 1 300px; /* Flex property to maintain width */
+    max-width: 300px;
+    flex: 1 1 300px;
+    animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
 .team-member img {
@@ -277,6 +269,8 @@ body, html {
     height: 350px;
     border-radius: 10%;
     margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
 .team-member h3 {
@@ -288,13 +282,15 @@ body, html {
 .team-member p {
     font-size: 1rem;
     margin: 0;
-     /* Optional for better text alignment */
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
 }
 
 .contact-hero {
     background-color: #121212;
     color: #FFD700;
-    padding: 100px 20px;
+    margin-top: 4%;
+    padding: 10px 20px;
     text-align: center;
 }
 
@@ -351,9 +347,79 @@ form button:hover {
     color: #121212;
 }
 
+.college-hero {
+    background-color: #121212;
+    color: #FFD700;
+    padding: 57px 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.college-hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.logos-section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: #1E1E1E;
+    gap: 80px;
+}
+
+.logo-box {
+    background-color: #2E2E2E;
+    padding: 20px;
+    opacity: 0;
+    border-radius: 10px;
+    text-align: center;
+    color: #E0E0E0;
+    max-width: 300px;
+    flex: 1 1 300px;
+    transition: transform 0.3s ease-in-out;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.logo-box:hover {
+    transform: scale(1.1);
+}
+
+.logo-box img {
+    width: 100%;
+    border-radius: 10%;
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.logo-box h3 {
+    font-size: 2rem;
+    margin: 10px 0 5px;
+    color: #FFD700;
+}
+
+.logo-box p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.logo-box:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.logo-box:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.logo-box:nth-child(3) {
+    animation-delay: 1.5s;
+}
 
 
-/* Animation for fade-in and move-up */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -364,6 +430,114 @@ form button:hover {
         transform: translateY(0);
     }
 }
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Intro animations with delays */
+.animate-fade-slide {
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.team-member {
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-in-out forwards;
+}
+
+.team-member:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.team-member:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.team-member:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+.footer-section.company-info {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 0.5s;
+}
+
+.footer-section.services:nth-child(2) {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.footer-section.services:nth-child(3) {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.footer-section.services:nth-child(4) {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+.footer-section.about {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 2.5s;
+}
+
+.thank-you-message {
+    text-align: center;
+    padding: 50px 20px;
+    color: #FFD700;
+}
+
+.contact-form-section p a {
+    color: #FFD700;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-form-section p a:hover {
+    text-decoration: underline;
+}
+
+.manual p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+.manual p a {
+    
+    color:#FFD700;
+    text-decoration: none;
+}
+.manual p a:hover {
+    
+    text-decoration: underline;
+}
+
+
+
 
 /* For larger screens */
 @media screen and (min-width: 2880px) {
@@ -397,10 +571,9 @@ form button:hover {
         font-size: 4.5rem;
     }
     .hero p {
-        font-size: 1.5
-        rem;
-        .btn {
-            padding: 12px 24px;
-        }
+        font-size: 1.5rem;
+    }
+    .btn {
+        padding: 12px 24px;
     }
 }
