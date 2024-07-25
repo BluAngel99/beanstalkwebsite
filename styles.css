@@ -1,0 +1,406 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #E0E0E0; /* Light text color for dark theme */
+    background-color: #121212; /* Dark background color */
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Faded effect */
+    z-index: 1;
+}
+
+.hero {
+    position: relative;
+    background-image: url('college.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 0;
+    padding: 0 20px; /* Add padding to avoid content being too close to edges */
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: #FFD700; /* Golden color for a highlight */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s forwards 0.5s; /* Fade in and move up animation */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards 1s; /* Fade in and move up animation */
+}
+
+.btn {
+    padding: 10px 20px;
+    border: 2px solid #FFD700; /* Golden border */
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #FFD700; /* Golden text color */
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background: #FFD700; /* Golden background on hover */
+    color: #121212; /* Dark text color on hover */
+}
+
+.nav {
+    position: fixed;
+    width: 100%;
+    height: 60px; /* Fixed height for nav */
+    padding: 0 20px; /* Padding to ensure text is not too close to edges */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0D0D0D; /* Darker black for nav */
+    color: #E0E0E0; /* Light text color */
+    z-index: 3;
+    box-sizing: border-box;
+    top: 0;
+    transition: transform 0.3s ease; /* Smooth transition for hiding/showing */
+}
+
+.nav.hidden {
+    transform: translateY(-100%); /* Move up out of view */
+}
+
+.nav .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.nav .menu-left, .nav .menu-right {
+    margin-left: 0; /* Add a small margin from the left edge */
+    margin-right: 0; /* Add a small margin from the right edge */
+}
+
+.menu a {
+    color: #E0E0E0; /* Light text color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: #FFD700; /* Golden color on hover */
+}
+
+.info-section {
+    height: 100vh; /* Set the height to the same as the background image */
+    display: flex;
+    flex-direction: column; /* Stack the info blocks vertically */
+    background: #1E1E1E; /* Slightly lighter dark background */
+}
+
+.info-block {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 40px; /* Add padding for spacing */
+    color: #E0E0E0; /* Light text color */
+    background: #1E1E1E; /* Same background color for both blocks */
+    gap: 40px; /* Space between title and content */
+    height: 50vh; /* Set the height to 50% of the viewport height */
+    opacity: 0; /* Initially invisible */
+    transform: translateY(20px); /* Start slightly down */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition for fade-in and move-up */
+}
+
+.info-block:nth-child(even) {
+    background: #1E1E1E; /* Same background color for alternating blocks */
+}
+
+.info-title {
+    flex: 1; /* Take up available space */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content vertically and horizontally */
+}
+
+.info-content {
+    flex: 1; /* Take up available space */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content vertically and horizontally */
+}
+
+.info-title h2 {
+    font-size: 4rem; /* Adjust the title font size */
+    color: #FFD700; /* Golden color for the title */
+    text-align: center; /* Center text horizontally */
+    line-height: 1.2; /* Adjust line height for multi-line title */
+}
+
+.info-content p {
+    font-size: 1.5rem; /* Increase content font size */
+    text-align: center; /* Center text horizontally */
+    margin: 0; /* Remove default margin */
+}
+
+.footer {
+    background-color: #121212;
+    color: #E0E0E0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.footer-section {
+    margin: 20px;
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 5px 0;
+}
+
+.footer-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.footer-btn {
+    padding: 10px 20px;
+    border: 2px solid #FFD700;
+    text-decoration: none;
+    color: #FFD700;
+    background: transparent;
+    transition: background 0.3s, color 0.3s;
+}
+
+.footer-btn:hover {
+    background: #FFD700;
+    color: #121212;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.association img {
+    width: 100px;
+    margin-top: 20px;
+}
+
+.footer-copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.footer-copyright a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+/* About Us Page Styles */
+.about-hero {
+    background-color: #121212;
+    color: #FFD700;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.about-hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.team-section {
+    display: flex;
+    justify-content: center; /* Center the team members */
+    flex-wrap: wrap;
+    padding: 40px 20px;
+    background-color: #1E1E1E;
+    gap: 80px; /* Adds moderate space between items */
+}
+
+.team-member {
+    margin: 10px;
+    text-align: center;
+    color: #E0E0E0;
+    max-width: 300px; /* Ensure a max-width */
+    flex: 1 1 300px; /* Flex property to maintain width */
+}
+
+.team-member img {
+    width: 350px;
+    height: 350px;
+    border-radius: 10%;
+    margin-bottom: 10px;
+}
+
+.team-member h3 {
+    font-size: 3rem;
+    margin: 10px 0 5px;
+    color: #FFD700;
+}
+
+.team-member p {
+    font-size: 1rem;
+    margin: 0;
+     /* Optional for better text alignment */
+}
+
+.contact-hero {
+    background-color: #121212;
+    color: #FFD700;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.contact-hero h1 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.contact-form-section {
+    padding: 40px 20px;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    background: #121212;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+form label {
+    font-size: 1.2rem;
+    color: #FFD700;
+}
+
+form input, form textarea {
+    padding: 10px;
+    border: 2px solid #FFD700;
+    background: transparent;
+    color: #E0E0E0;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 10px;
+    border: none;
+    background: #FFD700;
+    color: #121212;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+form button:hover {
+    background: #E0E0E0;
+    color: #121212;
+}
+
+
+
+/* Animation for fade-in and move-up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* For larger screens */
+@media screen and (min-width: 2880px) {
+    .hero h1 {
+        font-size: 5rem;
+    }
+    .hero p {
+        font-size: 1.5rem;
+    }
+    .btn {
+        padding: 15px 30px;
+    }
+}
+
+/* Media Queries for 3:2 Aspect Ratio */
+@media screen and (max-aspect-ratio: 3/2) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 8px 16px;
+    }
+}
+
+/* Media Queries for 16:9 Aspect Ratio */
+@media screen and (min-aspect-ratio: 16/9) {
+    .hero h1 {
+        font-size: 4.5rem;
+    }
+    .hero p {
+        font-size: 1.5
+        rem;
+        .btn {
+            padding: 12px 24px;
+        }
+    }
+}
